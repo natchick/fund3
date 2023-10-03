@@ -6,10 +6,13 @@ document.querySelector('#push').onclick = function(){
     else{
         document.querySelector('#tasks').innerHTML += `
             <div class="task">
+                <button class='crossOutButton'>✔️
+                    <i class="crossOutButton"></i>
+                </button>
                 <span id="taskname">
                     ${document.querySelector('#newtask input').value}
                 </span>
-                <button class="delete">
+                <button class="delete">Delete
                     <i class="far fa-trash-alt"></i>
                 </button>
             </div>
@@ -21,7 +24,11 @@ document.querySelector('#push').onclick = function(){
                 this.parentNode.remove();
             }
         }
+        var crossout_tasks = document.querySelectorAll(".crossOutButton");
+        for(var i=0; i<crossout_tasks.length; i++){
+            crossout_tasks[i].onclick = function(){
+            this.parentNode.style.textDecoration = ('line-through');
+            }
+        }
     }
 }
-
-
