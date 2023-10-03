@@ -12,7 +12,7 @@ document.querySelector('#push').onclick = function(){
                 <span id="taskname">
                     ${document.querySelector('#newtask input').value}
                 </span>
-                <button class="delete">Delete
+                <button class="delete">🗑️
                     <i class="far fa-trash-alt"></i>
                 </button>
             </div>
@@ -27,7 +27,11 @@ document.querySelector('#push').onclick = function(){
         var crossout_tasks = document.querySelectorAll(".crossOutButton");
         for(var i=0; i<crossout_tasks.length; i++){
             crossout_tasks[i].onclick = function(){
-            this.parentNode.style.textDecoration = ('line-through');
+                if (this.parentNode.children[1].style.textDecoration === ('line-through')) {
+                    this.parentNode.children[1].style.textDecoration = ('none')
+                } else {
+                    this.parentNode.children[1].style.textDecoration = ('line-through');
+                }
             }
         }
     }
