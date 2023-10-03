@@ -96,3 +96,12 @@ body{
 #crossOut{
     text-decoration: line-through;
 }
+
+h1{
+    display: flex;
+    font-size: 89px;
+    color: white;
+    font-family: 'Dela Gothic One', cursive;
+    padding-right: 80%;
+    padding-left: 2%;
+} 
